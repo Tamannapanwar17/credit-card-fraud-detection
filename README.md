@@ -239,7 +239,8 @@ Top features contributing to fraud prediction:
 ```text
 credit-card-fraud-detection/
 │
-├── creditcard.csv
+├── .gitignore
+├── app.py
 ├── Credit_Card_Fraud_Detection.ipynb
 ├── requirements.txt
 └── README.md
