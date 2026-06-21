@@ -5,21 +5,24 @@
 ![XGBoost](https://img.shields.io/badge/XGBoost-Gradient%20Boosting-success?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 
+> Detecting fraudulent credit card transactions using Machine Learning techniques on a highly imbalanced real-world financial dataset.
+
+---
+
 ## 📌 Overview
 
-Credit card fraud is a major challenge for financial institutions worldwide. Due to the highly imbalanced nature of transaction data, detecting fraudulent activities accurately is difficult.
+Credit card fraud is a significant challenge for financial institutions worldwide. Since fraudulent transactions represent only a tiny fraction of all transactions, building an effective fraud detection system requires handling highly imbalanced data.
 
-This project develops a Machine Learning-based Fraud Detection System capable of identifying fraudulent transactions from legitimate ones using historical transaction data.
-
-The project explores multiple machine learning algorithms and evaluates their performance using industry-standard metrics such as Precision, Recall, F1-Score, and ROC-AUC.
+This project develops a Machine Learning-based fraud detection system capable of identifying fraudulent transactions using historical transaction records. Multiple machine learning algorithms were trained and compared to determine the most effective approach.
 
 ---
 
 ## 🚀 Highlights
 
-✅ Built an end-to-end fraud detection pipeline on 284,807 real-world transactions
+✅ Built an end-to-end fraud detection pipeline on **284,807 real-world transactions**
 
-✅ Compared multiple machine learning models:
+✅ Compared multiple machine learning algorithms:
+
 - Logistic Regression
 - Logistic Regression + SMOTE
 - Random Forest
@@ -27,6 +30,7 @@ The project explores multiple machine learning algorithms and evaluates their pe
 - XGBoost
 
 ✅ Achieved:
+
 - 94% Precision using Random Forest
 - 83% Recall using Random Forest
 - 88% F1-Score using Random Forest
@@ -38,40 +42,53 @@ The project explores multiple machine learning algorithms and evaluates their pe
 
 ## 🎯 Problem Statement
 
-Financial institutions process millions of transactions every day. Even a small percentage of fraudulent transactions can result in significant financial losses.
+Financial institutions process millions of transactions every day. Even a small percentage of fraudulent transactions can result in substantial financial losses.
 
-The goal of this project is to develop a machine learning model that can:
+The objective of this project is to build a machine learning model capable of:
 
-- Detect fraudulent transactions accurately
-- Minimize false negatives
-- Handle highly imbalanced datasets effectively
+- Detecting fraudulent transactions accurately
+- Minimizing false negatives
+- Handling highly imbalanced datasets
+- Improving fraud detection reliability
+
+---
+
+## 💼 Business Impact
+
+An effective fraud detection system can:
+
+- Reduce financial losses
+- Improve customer trust
+- Detect suspicious transactions quickly
+- Support risk management strategies
+- Enhance transaction security
+
+This project focuses on maximizing fraud detection performance while minimizing false alarms.
 
 ---
 
 ## 📊 Dataset Information
 
-### Dataset
+### Dataset Source
 
-Credit Card Fraud Detection Dataset
-
-### Source
-
-Kaggle
+Kaggle Credit Card Fraud Detection Dataset
 
 https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 
-### Dataset Characteristics
+### Dataset Snapshot
 
-- Total Transactions: 284,807
-- Fraudulent Transactions: 492
-- Legitimate Transactions: 284,315
-- Highly Imbalanced Dataset
+| Metric | Value |
+|----------|----------|
+| Total Transactions | 284,807 |
+| Legitimate Transactions | 284,315 |
+| Fraudulent Transactions | 492 |
+| Fraud Percentage | 0.172% |
 
 ### Features
 
-| Feature Type | Description |
-|-------------|-------------|
-| Time | Seconds elapsed between transactions |
+| Feature | Description |
+|----------|----------|
+| Time | Time elapsed between transactions |
 | Amount | Transaction Amount |
 | V1 - V28 | PCA-transformed confidential features |
 | Class | Target Variable |
@@ -102,21 +119,21 @@ Target Variable:
 
 ### 1. Data Collection
 
-- Imported dataset
+- Loaded transaction dataset
 - Explored dataset structure
-- Checked class distribution
+- Analyzed class distribution
 
 ### 2. Data Preprocessing
 
 - Missing value analysis
 - Feature scaling
 - Train-test split
-- Class imbalance analysis
+- Data visualization
 
-### 3. Handling Imbalanced Data
+### 3. Handling Class Imbalance
 
-- SMOTE (Synthetic Minority Oversampling Technique)
-- Comparison with original dataset performance
+- Applied SMOTE oversampling
+- Compared results before and after SMOTE
 
 ### 4. Model Training
 
@@ -130,13 +147,28 @@ Models used:
 
 ### 5. Model Evaluation
 
-Metrics used:
+Evaluation metrics:
 
 - Precision
 - Recall
 - F1-Score
 - ROC-AUC Score
 - Confusion Matrix
+
+---
+
+## 📊 Exploratory Data Analysis
+
+Key observations from the dataset:
+
+- The dataset contains 284,807 transactions.
+- Only 492 transactions are fraudulent.
+- Fraudulent transactions account for approximately 0.172% of the data.
+- The dataset is highly imbalanced, making fraud detection a challenging classification problem.
+- Most transaction amounts are relatively small, with a few high-value outliers.
+- Features V1–V28 are PCA-transformed variables that preserve confidentiality while retaining predictive information.
+
+These observations highlight the importance of using Precision, Recall, F1-Score, and ROC-AUC instead of relying solely on Accuracy.
 
 ---
 
@@ -153,9 +185,7 @@ Metrics used:
 
 ## 🏆 Best Performing Model
 
-### Random Forest (Without SMOTE)
-
-Fraud Class Performance:
+### Random Forest
 
 | Metric | Score |
 |----------|----------|
@@ -163,23 +193,26 @@ Fraud Class Performance:
 | Recall | 0.83 |
 | F1-Score | 0.88 |
 
-Why it performed best:
+### Why Random Forest?
 
-- High precision reduced false alarms
-- Strong recall detected most fraud cases
-- Best balance between precision and recall
+Random Forest achieved the best balance between fraud detection capability and minimizing false alarms.
+
+Benefits:
+
+- High fraud detection precision
+- Strong fraud recall
+- Robust performance on imbalanced data
+- Best overall F1-Score
 
 ---
 
 ## 📊 XGBoost Performance
 
-### ROC-AUC Score
-
 | Metric | Value |
 |----------|----------|
-| ROC-AUC | 0.9528 |
+| ROC-AUC Score | 0.9528 |
 
-A ROC-AUC score of 95.28% indicates excellent discrimination between fraudulent and legitimate transactions.
+A ROC-AUC score of 95.28% demonstrates excellent ability to distinguish fraudulent transactions from legitimate transactions.
 
 ---
 
@@ -209,28 +242,27 @@ credit-card-fraud-detection/
 │
 ├── creditcard.csv
 ├── Credit_Card_Fraud_Detection.ipynb
-├── README.md
 ├── requirements.txt
-└── screenshots/
+└── README.md
 ```
 
 ---
 
-## 🚀 Installation
+## 📦 Installation
 
-### Clone Repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/Tamannapanwar17/credit-card-fraud-detection.git
 ```
 
-### Move Into Project Directory
+Move into the project directory:
 
 ```bash
 cd credit-card-fraud-detection
 ```
 
-### Install Dependencies
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -240,47 +272,36 @@ pip install -r requirements.txt
 
 ## ▶️ Run the Project
 
-Open Jupyter Notebook:
+Launch Jupyter Notebook:
 
 ```bash
 jupyter notebook
 ```
 
-or upload the notebook to Google Colab and run all cells.
-
----
-
-## 📷 Project Outputs
-
-Add screenshots of:
-
-- Dataset Distribution
-- Correlation Heatmap
-- Confusion Matrix
-- ROC Curve
-- Feature Importance Plot
-
-Example:
+Open:
 
 ```text
-screenshots/
-├── class_distribution.png
-├── confusion_matrix.png
-├── roc_curve.png
-└── feature_importance.png
+Credit_Card_Fraud_Detection.ipynb
 ```
+
+Run all cells.
 
 ---
 
-## 💡 Key Learnings
+## 🧠 Skills Demonstrated
 
-- Data preprocessing techniques
-- Handling imbalanced datasets
-- SMOTE oversampling
-- Classification algorithms
-- Ensemble learning methods
-- Fraud detection systems
-- Model evaluation on real-world datasets
+- Machine Learning
+- Classification Modeling
+- Fraud Detection
+- Data Preprocessing
+- Data Visualization
+- Feature Scaling
+- SMOTE Oversampling
+- Ensemble Learning
+- Random Forest
+- XGBoost
+- Model Evaluation
+- Python Programming
 
 ---
 
@@ -289,18 +310,10 @@ screenshots/
 - Hyperparameter Tuning
 - LightGBM Implementation
 - Deep Learning Models
+- Streamlit Dashboard
 - Real-Time Fraud Detection API
-- Streamlit Deployment
-- Docker Containerization
-- Cloud Deployment (AWS/GCP)
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome.
-
-Feel free to fork this repository and submit a pull request.
+- Docker Deployment
+- AWS/GCP Deployment
 
 ---
 
@@ -308,7 +321,7 @@ Feel free to fork this repository and submit a pull request.
 
 ### Tamanna Panwar
 
-Aspiring Machine Learning Engineer | Data Science Enthusiast
+Machine Learning Enthusiast | Aspiring Data Scientist
 
 GitHub:
 https://github.com/Tamannapanwar17
@@ -320,6 +333,4 @@ https://www.linkedin.com/in/tamanna-p-947299229/
 
 ## ⭐ Support
 
-If you found this project useful, please consider giving it a star on GitHub.
-
-A star helps others discover the project and motivates further improvements.
+If you found this project useful, consider giving it a ⭐ on GitHub.
