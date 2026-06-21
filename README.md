@@ -1,5 +1,4 @@
-# 💳 Credit Card Fraud Detection using Machine Learning
-
+# 💳 # 💳 Credit Card Fraud Detection using Machine Learning | Random Forest, SMOTE & XGBoost
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge)
 ![XGBoost](https://img.shields.io/badge/XGBoost-Gradient%20Boosting-success?style=for-the-badge)
