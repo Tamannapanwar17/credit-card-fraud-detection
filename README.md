@@ -288,6 +288,39 @@ Run all cells.
 
 ---
 
+## 🌐 Streamlit Application
+
+A simple web application is included for fraud prediction.
+
+### Run Locally
+
+```bash
+streamlit run app.py
+```
+
+### Features
+
+- Upload transaction CSV files
+- Predict fraudulent transactions
+- View prediction results
+- Download prediction output as CSV
+
+### Required Model File
+
+Before running the Streamlit app, generate the trained model by running:
+
+```text
+Credit_Card_Fraud_Detection.ipynb
+```
+
+This creates:
+
+```text
+fraud_detection_model.pkl
+```
+
+which is used by the application.
+
 ## 🧠 Skills Demonstrated
 
 - Machine Learning
